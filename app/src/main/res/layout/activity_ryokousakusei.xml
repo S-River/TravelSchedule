@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/menuBarColors"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/rKoumokuButton"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_book_24" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="旅行作成"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/rKoumokuButton2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_directions_walk_white_24" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="スケジュール"
+                android:textAlignment="center"
+                android:textColor="@color/textWhite" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/rKoumokuButton3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_card_travel_24" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="持ち物管理"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/rKoumokuButton4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_account_balance_wallet_24" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="費用管理"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="保存"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/readBtn1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/readBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="読み込み"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saveBtn1"
+        app:layout_constraintTop_toTopOf="@+id/saveBtn1" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/meinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal|fill_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/inLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/startText10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouStartHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btnDummy10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="↓"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/timeText10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/timeHint"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/dummy"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/endText10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/ryokouEndHint"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/removeBtn10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_rounded_corners_5dp"
+                        android:text="削除"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/btnColors"
+        app:layout_constraintBottom_toTopOf="@+id/readBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="50dp"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

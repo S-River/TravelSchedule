@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/menuBarColors"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/koumokuButton"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_book_white_24" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:text="旅行作成"
+                android:textAlignment="center"
+                android:textColor="@color/textWhite" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/koumokuButton2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_directions_walk_24" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="スケジュール"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/koumokuButton3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_card_travel_24" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="持ち物管理"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/koumokuButton4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_account_balance_wallet_24" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="費用管理"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="保存"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/readBtn1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/readBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="読み込み"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saveBtn1"
+        app:layout_constraintTop_toTopOf="@+id/saveBtn1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/meinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal|fill_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/dateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ryokoukikanTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="0"
+                    android:text="旅行期間"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/dateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="0"
+                    android:onClick="showDatePickerDialog"
+                    android:text="--/--/--"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:text="~"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/dateTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="0"
+                    android:onClick="showDatePickerDialog2"
+                    android:text="--/--/--"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/dataTextDelBtn"
+                    android:layout_width="10dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="消去"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/textBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn1"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn2"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn3"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn4"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn5"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn6"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn7"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn8"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn9"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/textBox19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/textBox20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/textBoxHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn10"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/btnColors"
+        app:layout_constraintBottom_toTopOf="@+id/readBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="50dp"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    tools:context=".MotimonoGamen">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/menuBarColors"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/mKoumokuButton"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_baseline_book_24" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="旅行作成"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/mKoumokuButton2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_baseline_directions_walk_24" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="スケジュール"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/mKoumokuButton3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_baseline_card_travel_white_24" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="持ち物管理"
+                android:textAlignment="center"
+                android:textColor="@color/textWhite" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/mKoumokuButton4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_baseline_account_balance_wallet_24" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="費用管理"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="保存"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toStartOf="@+id/readBtn1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/readBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="読み込み"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saveBtn1"
+        app:layout_constraintTop_toTopOf="@+id/saveBtn1" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/meinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal|fill_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn1"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn2"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn3"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn4"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn5"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn6"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn7"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn8"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn9"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+                <EditText
+                    android:id="@+id/textBox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/removeBtn10"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/btnColors"
+        app:layout_constraintBottom_toTopOf="@+id/readBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="50dp"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

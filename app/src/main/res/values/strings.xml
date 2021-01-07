@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">旅行スケジュールアプリ</string>
+    <string name="categoryHint">項目名</string>
+    <string name="textBoxHint">備考</string>
+    <string name="button">YourAppName</string>
+    <string name="no_date">No Data</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="ryokouStartHint">出発地</string>
+    <string name="ryokouEndHint">目的地</string>
+    <string name="timeHint">所要時間</string>
+    <string name="moneyHint">金額</string>
+</resources>

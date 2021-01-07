@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView5">
+
+        <TextView
+            android:id="@+id/divValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="0"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="円"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/layoutAmari"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="余り"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/amariView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="円"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <LinearLayout
+            android:id="@+id/meinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal|fill_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hiyou_textBox10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:ems="10"
+                    android:hint="@string/categoryHint"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/hiyou_valueView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/moneyHint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textViewYen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="円"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/hiyou_removeBtn10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/shape_rounded_corners_5dp"
+                    android:text="削除"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="人"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="円"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="割勘金額"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/menuBarColors"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/hkoumokuButton"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_book_24" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="旅行作成"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/hkoumokuButton2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_directions_walk_24" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="スケジュール"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/hkoumokuButton3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_card_travel_24" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="持ち物管理"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/hkoumokuButton4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/menuBarColors"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_account_balance_wallet_white_24" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="費用管理"
+                android:textAlignment="center"
+                android:textColor="@color/textWhite" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="保存"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/readBtn1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/readBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:text="読み込み"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saveBtn1"
+        app:layout_constraintTop_toTopOf="@+id/saveBtn1" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/btnColors"
+        app:layout_constraintBottom_toTopOf="@+id/readBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="50dp"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="合計金額"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/sumValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
